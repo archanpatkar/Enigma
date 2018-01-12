@@ -56,16 +56,15 @@ class Rotor:
             "z"
         ];
 
-    def get(self,data):
-        final = [];
-        char = data.lower()
-        for():
-        index = Rotor.letters.index(char)
-        derived = (index + self.rotor) % 26
-        self.step();
-        final.append(Rotor.letters[derived]);
 
+    def scramble(self,data):
+        index = Rotor.letters.index(data);
+        derived = ((index + self.rotor) % 26);
+        output = Rotor.letters[derived];
+        self.step();
+        return output;
 
     def step(self):
-        self.rotor += 1;
+        if(self.rotor < 25):
+            self.rotor += 1;
         
