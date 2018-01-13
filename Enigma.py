@@ -11,6 +11,19 @@ class Enigma:
         self.PlugBoard = plugboard;
         self.Reflector = reflector;
     
+    def encrypt(self):
+        pass
+    
+    def decrypt(self):
+        pass
+
+    def each(self,char):
+        I = self.I;
+        II = self.II;
+        III = self.III;
+        output = III.scramble(II.scramble(I.scramble("a")));
+        I.step();
+        return output;
 
         
 
