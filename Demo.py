@@ -3,10 +3,11 @@ from Enigma import Enigma
 
 e1 = Enigma(
             {
-                "I":(10,"1"),
-                "II":(0,"1"),
-                "III":(9,"1")
+                "I":(4,"1"),
+                "II":(10,"1"),
+                "III":(0,"1")
             }
         );
 
-e1.encrypt("");
+
+print(e1.encrypt("Hello World!"));
