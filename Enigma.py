@@ -1,8 +1,9 @@
 from Rotor import Rotor
+from Reflector import B
 
 class Enigma:
     
-    def __init__(self , rotor_config = { "I":(0,"1"), "II":(0,"1"), "III":(0,"1") } , plugboard = None , reflector = None): 
+    def __init__(self , rotor_config = { "I":(0,"1"), "II":(0,"1"), "III":(0,"1") } , plugboard = None , reflector = B): 
         self.I = Rotor(*rotor_config.get("I"));
         self.II = Rotor(*rotor_config.get("II"));
         self.III = Rotor(*rotor_config.get("III"));
@@ -11,11 +12,19 @@ class Enigma:
         self.PlugBoard = plugboard;
         self.Reflector = reflector;
     
-    def encrypt(self):
-        pass
-    
-    def decrypt(self):
-        pass
+
+    def process(self,data):
+        string = "";
+        for char in data:
+            scrambled = self.each(char);
+            string += self.Reflector[scrambled];
+        return string;
+
+    def encrypt(self,data):
+        return self.process(data);
+
+    def decrypt(self,data):
+        return self.process(data);
 
     def each(self,char):
         I = self.I;
@@ -24,18 +33,3 @@ class Enigma:
         output = III.scramble(II.scramble(I.scramble("a")));
         I.step();
         return output;
-
-        
-
-
-# count = 0;
-
-# for i in range(26):
-#     for j in range(26):
-#         for k in range(26):
-#             count += 1;
-#             output = III.scramble(II.scramble(I.scramble("a")));
-#             print(output);
-#             I.step();
-#         II.step();
-#     III.step();
