@@ -1,17 +1,28 @@
 from Rotor import Rotor
 
+class Enigma:
+    
+    def __init__(self , rotor_config = { "I":(0,"1"), "II":(0,"1"), "III":(0,"1") } , plugboard = None , reflector = None): 
+        self.I = Rotor(*rotor_config.get("I"));
+        self.II = Rotor(*rotor_config.get("II"));
+        self.III = Rotor(*rotor_config.get("III"));
+        self.I.on("Sidereal", lambda *args: self.II.step())
+        self.II.on("Sidereal", lambda *args: self.III.step())
+        self.PlugBoard = plugboard;
+        self.Reflector = reflector;
+    
 
-r = Rotor(0);
-r1 = Rotor(0);
-r2 = Rotor(0);
+        
 
 
-o1 = r2.scramble(r1.scramble(r.scramble("a")));
-o2 = r2.scramble(r1.scramble(r.scramble("a")));
-o3 = r2.scramble(r1.scramble(r.scramble("a")));
-o4 = r2.scramble(r1.scramble(r.scramble("a")));
+# count = 0;
 
-print(o1);
-print(o2);
-print(o3);
-print(o4);
+# for i in range(26):
+#     for j in range(26):
+#         for k in range(26):
+#             count += 1;
+#             output = III.scramble(II.scramble(I.scramble("a")));
+#             print(output);
+#             I.step();
+#         II.step();
+#     III.step();
