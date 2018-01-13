@@ -29,6 +29,7 @@ class Rotor:
 
     def __init__(self,initial=0):
         self.rotor = initial;
+        self.interval = 1;
         self.letters = [
             "a",
             "b",
@@ -61,6 +62,8 @@ class Rotor:
         index = Rotor.letters.index(data);
         derived = ((index + self.rotor) % 26);
         output = Rotor.letters[derived];
+        if(self.interval > 1):
+            pass
         self.step();
         return output;
 
