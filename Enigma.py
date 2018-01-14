@@ -21,10 +21,10 @@ class Enigma:
         return string;
 
     def encrypt(self,data):
-        return self.process(data);
+        return self.process(data.upper());
 
     def decrypt(self,data):
-        return self.process(data);
+        return self.process(data.upper());
 
     def each(self,char):
         I = self.I;
