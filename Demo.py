@@ -8,5 +8,5 @@ e1 = Enigma(
                 (5,"III")
             ]
         );
-        
-print(e1.encrypt("Hello World!"));
+
+print(e1.encrypt("Hello World"));
