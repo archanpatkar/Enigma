@@ -1,12 +1,31 @@
 from Enigma import Enigma
 
-
 e1 = Enigma(
-            [
-                (20,"I"),
-                (13,"II"),
-                (5,"III")
-            ]
+            rotors = [
+                        (20,"IC"),
+                        (13,"IIC"),
+                        (5,"IIIC")
+            ],
+            reflector = "B"
         );
 
-print(e1.encrypt("Hello World"));
+encrypted_string = e1.encrypt("Hello")
+print(encrypted_string);
+
+
+e2 = Enigma(
+            rotors = [
+                        (20,"IC"),
+                        (13,"IIC"),
+                        (5,"IIIC")
+            ],
+            reflector = "B"
+        );
+
+print(e2.decrypt(encrypted_string));
+
+print("Position ->", e1.I.rotor)
+out = e1.I.scramble("A");
+inv = e1.I.unscramble(out);
+print("Output -> ",out);
+print("Input -> ",inv);
