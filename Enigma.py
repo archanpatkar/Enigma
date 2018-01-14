@@ -21,7 +21,7 @@ class Enigma:
         return string;
 
     def encrypt(self,data):
-        return self.process(data.upper());
+        return self.process(data.upper().replace(" ",""));
 
     def decrypt(self,data):
         return self.process(data.upper());
@@ -30,6 +30,6 @@ class Enigma:
         I = self.I;
         II = self.II;
         III = self.III;
-        output = III.scramble(II.scramble(I.scramble("a")));
+        output = III.scramble(II.scramble(I.scramble(char)));
         I.step();
         return output;
