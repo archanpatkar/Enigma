@@ -2,11 +2,11 @@ from Enigma import Enigma
 
 
 e1 = Enigma(
-            {
-                "I":(4,"1"),
-                "II":(10,"1"),
-                "III":(0,"1")
-            }
+            [
+                (20,"I"),
+                (13,"II"),
+                (5,"III")
+            ]
         );
 
 
