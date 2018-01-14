@@ -34,7 +34,7 @@ class Rotor(EventEmitter):
     def __init__(self,initial=0,rtype="I"):
         EventEmitter.__init__(self);
         self.rotor = initial;
-        self.letters = rotors.get(rtype);
+        self.letters = rotors.get(rtype)[:];
     
     def rotate(key):
         if key < 26 and key >= 0:
@@ -42,22 +42,18 @@ class Rotor(EventEmitter):
 
     def scramble(self,data):
         index = Rotor.letters.index(data);
-        derived = ((index + self.rotor) % 26);
-        output = self.letters[derived];
-        print("Converting {} -> {}".format(data,output));
+        output = self.letters[index];
         return output;
     
-
     def unscramble(self,data):
-        index = Rotor.letters.index(data);
-        derived = ((index - self.rotor) % 26);
-        output = self.letters[derived];
-        print("Converting {} -> {}".format(data,output));
+        index = self.letters.index(data);
+        output = Rotor.letters[index];
         return output;
 
     def step(self):
         if(self.rotor < 25):
             self.rotor += 1;
+            self.letters.append(self.letters.pop(0));
         else:
             self.rotor = 0;
             self.emit("Sidereal");
