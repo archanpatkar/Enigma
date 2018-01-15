@@ -36,6 +36,7 @@ class Enigma:
         III = self.III;
         I.step();        
         output = III.scramble(II.scramble(I.scramble(char)));
+        output = I.scramble(II.scramble(III.scramble(self.Reflector.get(output))));
         return output;
 
     def eachinv(self,char):
@@ -43,11 +44,6 @@ class Enigma:
         II = self.II;
         III = self.III;
         I.step();
-        output = I.unscramble(II.unscramble(III.unscramble(char)));
+        output = III.unscramble(II.unscramble(I.unscramble(char)));
+        output = I.unscramble(II.unscramble(III.unscramble(self.Reflector.get(output))));
         return output;
-
-    def reflect(self,char):
-        I = self.I;
-        II = self.II;
-        III = self.III;
-        return I.scramble(II.scramble(III.scramble(self.Reflector.get(char))));
