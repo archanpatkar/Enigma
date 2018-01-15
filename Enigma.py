@@ -16,8 +16,7 @@ class Enigma:
     def process(self,data):
         string = "";
         for char in data:
-            string +=  self.each(char);
-        print("Converted {} -> {}".format(data,string));
+            string += self.each(char);
         return string;
 
     def encrypt(self,data):
@@ -31,6 +30,14 @@ class Enigma:
         II = self.II;
         III = self.III;
         output = III.scramble(II.scramble(I.scramble(char)));
+        I.step();
+        return output;
+
+    def eachinv(self,char):
+        I = self.I;
+        II = self.II;
+        III = self.III;
+        output = I.unscramble(II.unscramble(III.unscramble(char)));
         I.step();
         return output;
 
