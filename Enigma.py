@@ -3,7 +3,7 @@ from Reflector import reflector as r
 
 class Enigma:
     
-    def __init__(self , rotors = [ (20,"I"), (13,"II"), (5,"III") ] , plugboard = None , reflector = "A"): 
+    def __init__(self , rotors = [ (20,"IC"), (13,"IIC"), (5,"IIIC") ] , plugboard = None , reflector = "A"): 
         self.I = Rotor(*rotors[0]);
         self.II = Rotor(*rotors[1]);
         self.III = Rotor(*rotors[2]);
@@ -16,10 +16,8 @@ class Enigma:
     def process(self,data):
         string = "";
         for char in data:
-            scrambled = self.each(char);
-            reflected = self.reflect(scrambled);
-            print("Converting {} -> {}".format(char,reflected));
-            string += reflected;
+            string +=  self.each(char);
+        print("Converted {} -> {}".format(data,string));
         return string;
 
     def encrypt(self,data):
@@ -29,23 +27,15 @@ class Enigma:
         return self.process(data.upper());
 
     def each(self,char):
-        print("each")
         I = self.I;
         II = self.II;
         III = self.III;
-        print("I -> {}".format(I.rotor));
-        print("II -> {}".format(II.rotor));
-        print("III -> {}".format(III.rotor));
         output = III.scramble(II.scramble(I.scramble(char)));
         I.step();
         return output;
 
-    def reflect(self,char):
-        print("reflect")
-        I = self.I;
-        II = self.II;
-        III = self.III;
-        print("I -> {}".format(I.rotor));
-        print("II -> {}".format(II.rotor));
-        print("III -> {}".format(III.rotor));
-        return I.scramble(II.scramble(III.scramble(char)));
+    # def reflect(self,char):
+    #     I = self.I;
+    #     II = self.II;
+    #     III = self.III;
+    #     return I.scramble(II.scramble(III.scramble(char)));
