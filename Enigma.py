@@ -15,13 +15,13 @@ class Enigma:
     def process(self,data):
         string = "";
         for char in data:
-            string += self.reflect(self.each(char));
+            string += self.each(char);
         return string;
 
     def processinv(self,data):
         string = "";
         for char in data:
-            string += self.eachinv(self.reflect(char));
+            string += self.eachinv(char);
         return string;
 
     def encrypt(self,data):
@@ -34,20 +34,20 @@ class Enigma:
         I = self.I;
         II = self.II;
         III = self.III;
+        I.step();        
         output = III.scramble(II.scramble(I.scramble(char)));
-        I.step();
         return output;
 
     def eachinv(self,char):
         I = self.I;
         II = self.II;
         III = self.III;
-        output = I.unscramble(II.unscramble(III.unscramble(char)));
         I.step();
+        output = I.unscramble(II.unscramble(III.unscramble(char)));
         return output;
 
     def reflect(self,char):
         I = self.I;
         II = self.II;
         III = self.III;
-        return I.scramble(II.scramble(III.scramble(char)));
+        return I.scramble(II.scramble(III.scramble(self.Reflector.get(char))));
