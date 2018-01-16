@@ -31,17 +31,18 @@ class Rotor(EventEmitter):
             "Z"
     ];
 
-    def __init__(self,initial=0,rtype="I"):
+    def __init__(self,ring_setting=0,rtype="I",turnover=25):
         EventEmitter.__init__(self);
-        self.rotor = initial;
-        self.letters = rotors.get(rtype)[:];
-        if(initial > 0):
-            for times in range(initial):
-                 self.letters.append(self.letters.pop(0));
-    
-    def rotate(key):
-        if key < 26 and key >= 0:
-            self.rotor = key;
+        self.position = initial;
+        self.letters = list(rotors.get(rtype));
+        if(ring_setting > 0):
+            for times in range(ring_setting):
+                self.letters.append(self.letters.pop(0));
+
+    def ring_setting(ring_setting):
+        if(ring_setting > 0):
+            for times in range(ring_setting):
+                self.letters.append(self.letters.pop(0));
 
     def scramble(self,data):
         index = Rotor.letters.index(data);
@@ -54,10 +55,10 @@ class Rotor(EventEmitter):
         return output;
 
     def step(self):
-        if(self.rotor < 25):
-            self.rotor += 1;
+        if(self.position < 25):
+            self.position += 1;
             self.letters.append(self.letters.pop(0));
         else:
-            self.rotor = 0;
+            self.position = 0;
             self.emit("Sidereal");
         
