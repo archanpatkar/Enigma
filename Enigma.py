@@ -1,16 +1,16 @@
 from Rotor import Rotor
-from Reflector import reflector as r
+from Reflector import Reflector
 
 class Enigma:
     
-    def __init__(self , rotors = [ (20,"IC"), (13,"IIC"), (5,"IIIC") ] , plugboard = None , reflector = "A"): 
-        self.I = Rotor(*rotors[0]);
-        self.II = Rotor(*rotors[1]);
-        self.III = Rotor(*rotors[2]);
+    def __init__(self , rotors = [ Rotor(0,"IC") , Rotor(0,"IIC") , Rotor(0,"IIIC") ] , plugboard = None , reflector = Reflector("A")): 
+        self.I = rotors[0];
+        self.II = rotors[1];
+        self.III = rotors[2];
         self.I.on("Sidereal", lambda *args: self.II.step())
         self.II.on("Sidereal", lambda *args: self.III.step())
         self.PlugBoard = plugboard;
-        self.Reflector = r(reflector);
+        self.Reflector = reflector;
 
     def encrypt(self,data):
         data = data.upper().replace(" ","");
@@ -18,7 +18,6 @@ class Enigma:
         for char in data:
             string += self.each(char);
         return string;
-
 
     def decrypt(self,data):
         data = data.upper();
