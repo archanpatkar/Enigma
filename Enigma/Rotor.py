@@ -31,10 +31,14 @@ class Rotor(EventEmitter):
             "Z"
     ];
 
-    def __init__(self,ring_setting=0,rtype="I",turnover=25):
+    def __init__(self , ring_setting=0 , type="IC" , wiring=None , turnover=25):
         EventEmitter.__init__(self);
         self.position = initial;
-        self.letters = list(rotors.get(rtype));
+        self.turnover = turnover;
+        if(wiring is None):
+            self.letters = list(rotors.get(type));
+        else:
+            self.letters = wiring[:];
         if(ring_setting > 0):
             for times in range(ring_setting):
                 self.letters.append(self.letters.pop(0));
@@ -58,7 +62,7 @@ class Rotor(EventEmitter):
         if(self.position < 25):
             self.position += 1;
             self.letters.append(self.letters.pop(0));
-        else:
-            self.position = 0;
+        if(self.position == self.turnover):
             self.emit("Sidereal");
-        
+        elif(self.position >= 25):
+            self.position = 0;
