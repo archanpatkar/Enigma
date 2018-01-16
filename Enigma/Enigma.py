@@ -9,7 +9,7 @@ class Enigma:
         self.III = rotors[2];
         self.I.on("Sidereal", lambda *args: self.II.step())
         self.II.on("Sidereal", lambda *args: self.III.step())
-        self.PlugBoard = plugboard;
+        self.Plugboard = plugboard;
         self.Reflector = reflector;
 
     def encrypt(self,data):
