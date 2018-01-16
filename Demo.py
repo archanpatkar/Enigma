@@ -1,6 +1,6 @@
-from Enigma import Enigma
-from Rotor import Rotor
-from Reflector import Reflector
+from Enigma.Enigma import Enigma
+from Enigma.Rotor import Rotor
+from Enigma.Reflector import Reflector
 
 e1 = Enigma(
             rotors = [
