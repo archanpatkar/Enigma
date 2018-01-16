@@ -11,24 +11,21 @@ class Enigma:
         self.II.on("Sidereal", lambda *args: self.III.step())
         self.PlugBoard = plugboard;
         self.Reflector = r(reflector);
-     
-    def process(self,data):
+
+    def encrypt(self,data):
+        data = data.upper().replace(" ",""));
         string = "";
         for char in data:
             string += self.each(char);
         return string;
 
-    def processinv(self,data):
+
+    def decrypt(self,data):
+        data = data.upper();
         string = "";
         for char in data:
             string += self.eachinv(char);
         return string;
-
-    def encrypt(self,data):
-        return self.process(data.upper().replace(" ",""));
-
-    def decrypt(self,data):
-        return self.processinv(data.upper());
 
     def each(self,char):
         I = self.I;
