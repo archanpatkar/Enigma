@@ -35,6 +35,9 @@ class Rotor(EventEmitter):
         EventEmitter.__init__(self);
         self.rotor = initial;
         self.letters = rotors.get(rtype)[:];
+        if(initial > 0):
+            for times in range(initial):
+                 self.letters.append(self.letters.pop(0));
     
     def rotate(key):
         if key < 26 and key >= 0:
