@@ -2,9 +2,9 @@ from Enigma import Enigma
 
 e1 = Enigma(
             rotors = [
-                        (0,"IC"),
-                        (0,"IIC"),
-                        (0,"IIIC"),
+                        (5,"IC"),
+                        (7,"IIC"),
+                        (10,"IIIC"),
                      ],
             reflector = "B"
         );
@@ -15,9 +15,9 @@ print(encrypted_string);
 
 e2 = Enigma(
             rotors = [
-                        (0,"IC"),
-                        (0,"IIC"),
-                        (0,"IIIC"),
+                        (5,"IC"),
+                        (7,"IIC"),
+                        (10,"IIIC"),
                      ],
             reflector = "B"
         );
