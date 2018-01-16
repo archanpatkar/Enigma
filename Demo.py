@@ -4,9 +4,18 @@ from Enigma.Reflector import Reflector
 
 e1 = Enigma(
             rotors = [
-                        Rotor(0,"IC"),
-                        Rotor(0,"IIC"),
-                        Rotor(0,"IIIC"),
+                        Rotor(  
+                                ring_setting = 0,
+                                type = "IC"
+                             ),
+                        Rotor(  
+                                ring_setting = 0,
+                                type = "IIC"
+                             ),
+                        Rotor(  
+                                ring_setting = 0,
+                                type = "IIIC"
+                             )
                      ],
             reflector = Reflector("B")
         );
@@ -16,9 +25,18 @@ print(encrypted_string);
 
 e2 = Enigma(
             rotors = [
-                        (0,"IC"),
-                        (0,"IIC"),
-                        (0,"IIIC"),
+                        Rotor(  
+                                ring_setting = 0,
+                                type = "IC"
+                             ),
+                        Rotor(  
+                                ring_setting = 0,
+                                type = "IIC"
+                             ),
+                        Rotor(  
+                                ring_setting = 0,
+                                type = "IIIC"
+                             )
                      ],
             reflector = Reflector("B")
         );
