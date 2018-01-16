@@ -13,7 +13,7 @@ class Enigma:
         self.Reflector = r(reflector);
 
     def encrypt(self,data):
-        data = data.upper().replace(" ",""));
+        data = data.upper().replace(" ","");
         string = "";
         for char in data:
             string += self.each(char);
