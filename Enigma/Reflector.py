@@ -1,6 +1,6 @@
 import json
 
-rf_types =  json.load(open("./reflectors.json",mode="r"))
+rf_types =  json.load(open("./Enigma/reflectors.json",mode="r"))
 
 def reflector(type):
     return rf_types.get(type);
@@ -10,4 +10,4 @@ class Reflector:
         self.reflector = reflector(type);
     
     def get(self,char):
-        self.reflector.get(char);
+        return self.reflector.get(char);
