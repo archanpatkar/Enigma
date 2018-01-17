@@ -33,7 +33,7 @@ class Rotor(EventEmitter):
 
     def __init__(self , ring_setting=0 , type="IC" , wiring=None , turnover=25):
         EventEmitter.__init__(self);
-        self.position = initial;
+        self.position = ring_setting;
         self.turnover = turnover;
         if(wiring is None):
             self.letters = list(rotors.get(type));
