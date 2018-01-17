@@ -17,7 +17,13 @@ e1 = Enigma(
                                 type = "IIIC"
                              )
                      ],
-            reflector = Reflector("B")
+            reflector = Reflector("B"),
+            plugboard = [
+                                ("A","X"),
+                                ("B","R"),
+                                ("V","S"),
+                                ("Y","Q")
+                        ]
         );
 
 encrypted_string = e1.encrypt("Hello")
@@ -38,7 +44,13 @@ e2 = Enigma(
                                 type = "IIIC"
                              )
                      ],
-            reflector = Reflector("B")
+            reflector = Reflector("B"),
+            plugboard = [
+                                ("A","X"),
+                                ("B","R"),
+                                ("V","S"),
+                                ("Y","Q")
+                        ]
         );
 
 print(e2.decrypt(encrypted_string));
