@@ -5,15 +5,15 @@ from Enigma.Reflector import Reflector
 e1 = Enigma(
             rotors = [
                         Rotor(  
-                                ring_setting = 0,
+                                ring_setting = 5,
                                 type = "IC"
                              ),
                         Rotor(  
-                                ring_setting = 0,
+                                ring_setting = 7,
                                 type = "IIC"
                              ),
                         Rotor(  
-                                ring_setting = 0,
+                                ring_setting = 10,
                                 type = "IIIC"
                              )
                      ],
@@ -32,15 +32,15 @@ print(encrypted_string);
 e2 = Enigma(
             rotors = [
                         Rotor(  
-                                ring_setting = 0,
+                                ring_setting = 5,
                                 type = "IC"
                              ),
                         Rotor(  
-                                ring_setting = 0,
+                                ring_setting = 7,
                                 type = "IIC"
                              ),
                         Rotor(  
-                                ring_setting = 0,
+                                ring_setting = 10,
                                 type = "IIIC"
                              )
                      ],
