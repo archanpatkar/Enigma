@@ -35,9 +35,11 @@ class Rotor(EventEmitter):
         EventEmitter.__init__(self);
         self.position = ring_setting;
         self.turnover = turnover;
+        self.type = type;
         if(wiring is None):
             self.letters = list(rotors.get(type));
         else:
+            self.type = "Custom";
             self.letters = wiring[:];
         if(ring_setting > 0):
             for times in range(ring_setting):
@@ -64,5 +66,5 @@ class Rotor(EventEmitter):
             self.letters.append(self.letters.pop(0));
         if(self.position == self.turnover):
             self.emit("Sidereal");
-        elif(self.position >= 25):
+        elif(self.position == 25):
             self.position = 0;
