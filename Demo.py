@@ -1,6 +1,7 @@
 from Enigma.Enigma import Enigma
 from Enigma.Rotor import Rotor
 from Enigma.Reflector import Reflector
+from Enigma.Plugboard import Plugboard
 
 e1 = Enigma(
             rotors = [
@@ -18,12 +19,13 @@ e1 = Enigma(
                              )
                      ],
             reflector = Reflector("B"),
-            plugboard = [
-                                ("A","X"),
-                                ("B","R"),
-                                ("V","S"),
-                                ("Y","Q")
-                        ]
+            plugboard = Plugboard([
+                                        ("A","X"),
+                                        ("H","Z"),
+                                        ("B","R"),
+                                        ("V","S"),
+                                        ("Y","Q")
+                                ])
         );
 
 encrypted_string = e1.encrypt("Hello")
@@ -45,12 +47,13 @@ e2 = Enigma(
                              )
                      ],
             reflector = Reflector("B"),
-            plugboard = [
-                                ("A","X"),
-                                ("B","R"),
-                                ("V","S"),
-                                ("Y","Q")
-                        ]
+            plugboard = Plugboard([
+                                        ("A","X"),
+                                        ("H","Z"),
+                                        ("B","R"),
+                                        ("V","S"),
+                                        ("Y","Q")
+                                ])
         );
 
 print(e2.decrypt(encrypted_string));
