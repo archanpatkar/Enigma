@@ -26,3 +26,5 @@ class RotorFlow:
         for rotor in self.flow.__reversed__():
             char = rotor.unscramble(char);
         return char;
+
+# Work in Progress!
