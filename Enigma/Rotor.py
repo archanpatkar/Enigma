@@ -2,34 +2,7 @@ from pyEmitter.emitter import EventEmitter
 from Enigma.Rotor_Types import *
 
 class Rotor(EventEmitter):
-    letters = [
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z"
-    ];
+    letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
     def __init__(self , ring_setting=0 , type="IC" , wiring=None , turnover=25):
         EventEmitter.__init__(self);
