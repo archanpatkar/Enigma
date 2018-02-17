@@ -1,5 +1,5 @@
 # Enigma
-### An Enigma Machine written in Python
+### An [Enigma Machine](https://en.wikipedia.org/wiki/Enigma_machine) Simulator from WWII written in Python
 
 ## Example Usage
 
