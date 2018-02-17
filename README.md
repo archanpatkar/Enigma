@@ -1,6 +1,6 @@
 # Enigma
 ### An [Enigma Machine](https://en.wikipedia.org/wiki/Enigma_machine) Simulator from WWII written in Python
-
+#### A Complete Modular Design with configurable Rotors and Reflectors through a JSON file 
 
 ## Details
 
@@ -17,6 +17,14 @@
 | UKW     	| QYHOGNECVPUZTFDJAXWMKISRBL 	| German Railway (Rocket) 	|
 | ETWR     	| QWERTZUIOASDFGHJKPYXCVBNML 	| German Railway (Rocket) 	|
 
+### Reflectors Supported
+
+| Rotor #     	| ABCDEFGHIJKLMNOPQRSTUVWXYZ 	|
+|-------------	|----------------------------	|
+| Reflector A 	| EJMZALYXVBWFCRQUONTSPIKHGD 	|
+| Reflector B 	| YRUHQSLDPXNGOKMIEBFZCWVJAT 	|
+| Reflector C 	| FVPJIAOYEDRZXWGCTKUQSBNMHL 	|
+| ETW         	| ABCDEFGHIJKLMNOPQRSTUVWXYZ 	|
 
 ## Example Usage
 
