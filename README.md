@@ -1,6 +1,23 @@
 # Enigma
 ### An [Enigma Machine](https://en.wikipedia.org/wiki/Enigma_machine) Simulator from WWII written in Python
 
+
+## Details
+
+### Rotors Supported
+
+| Rotor # 	| ABCDEFGHIJKLMNOPQRSTUVWXYZ 	| Model Name & Number     	|
+|:-------:	|----------------------------	|-------------------------	|
+| IC      	| DMTWSILRUYQNKFEJCAZBPGXOHV 	| Commercial Enigma A, B  	|
+| IIC     	| HQZGPJTMOBLNCIFDYAWVEUSRKX 	| Commercial Enigma A, B  	|
+| IIIC    	| UQNTLSZFMREHDPXKIBVYGJCWOA 	| Commercial Enigma A, B  	|
+| IR       	| JGDQOXUSCAMIFRVTPNEWKBLZYH 	| German Railway (Rocket) 	|
+| IIR      	| NTZPSFBOKMWRCJDIVLAEYUXHGQ 	| German Railway (Rocket) 	|
+| IIIR     	| JVIUBHTCDYAKEQZPOSGXNRMWFL 	| German Railway (Rocket) 	|
+| UKW     	| QYHOGNECVPUZTFDJAXWMKISRBL 	| German Railway (Rocket) 	|
+| ETWR     	| QWERTZUIOASDFGHJKPYXCVBNML 	| German Railway (Rocket) 	|
+
+
 ## Example Usage
 
 ``` python 
