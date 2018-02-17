@@ -1,6 +1,6 @@
 # Enigma
 ### An [Enigma Machine](https://en.wikipedia.org/wiki/Enigma_machine) Simulator from WWII written in Python
-#### A Complete Modular Design with configurable Rotors and Reflectors through a JSON file 
+#### A Complete Modular Design with configurable Rotors and Reflectors through JSON
 
 ## Details
 > `Note`: Rotors and Reflectors can be added by modifying rotors.json and reflector.json files
