@@ -3,7 +3,7 @@
 #### A Complete Modular Design with configurable Rotors and Reflectors through JSON
 
 ## Details
-> `Note`: Rotors and Reflectors can be added by modifying rotors.json and reflector.json files
+> `Note`: Rotors and Reflectors can be added by modifying rotors.json and reflectors.json files
 
 ### Rotors Supported
 
