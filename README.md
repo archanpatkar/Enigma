@@ -1,4 +1,4 @@
-# Enigma
+# <img src="./enigma.png">
 ### An [Enigma Machine](https://en.wikipedia.org/wiki/Enigma_machine) Simulator from WWII written in Python
 #### A Complete Modular and Event Driven Design using [Emitters](https://github.com/archanpatkar/pyEmitter) with configurable Rotors and Reflectors
 
