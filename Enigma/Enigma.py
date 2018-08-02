@@ -1,7 +1,6 @@
 from Enigma.Rotor import Rotor
 from Enigma.Reflector import Reflector
 from Enigma.Plugboard import Plugboard
-from Enigma.RotorFlow import RotorFlow
 
 class Enigma:
     
