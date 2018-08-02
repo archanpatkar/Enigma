@@ -17,32 +17,28 @@ class Enigma:
         data = data.upper().replace(" ","");
         string = "";
         for char in data:
-            string += self.each(char);
+            string += self.each(char,True);
         return string;
 
     def decrypt(self,data):
         data = data.upper();
         string = "";
         for char in data:
-            string += self.eachinv(char);
+            string += self.each(char,False);
         return string;
 
-    def each(self,char):
+    def each(self,char,flag):
         self.rotors[0].step()
         output = self.Plugboard.get(char)
         for rotor in self.rotors:
-            output = rotor.scramble(output)
+            if flag:
+                output = rotor.scramble(output)
+            else:
+                output = rotor.unscramble(output)
         output = self.Reflector.get(output)
         for rotor in self.rotors[::-1]:
-            output = rotor.scramble(output)    
-        return self.Plugboard.get(output);
-
-    def eachinv(self,char):
-        self.rotors[0].step()
-        output = self.Plugboard.get(char)
-        for rotor in self.rotors:
-            output = rotor.unscramble(output)
-        output = self.Reflector.get(output)
-        for rotor in self.rotors[::-1]:
-            output = rotor.unscramble(output)   
+            if flag:
+                output = rotor.scramble(output)    
+            else:
+                output = rotor.unscramble(output)  
         return self.Plugboard.get(output);
