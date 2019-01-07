@@ -61,7 +61,7 @@ e1 = Enigma(
         );
 
 encrypted_string = e1.encrypt("Hello")
-print(encrypted_string);
+print(encrypted_string)
 
 e2 = Enigma(
             rotors = [
@@ -88,5 +88,5 @@ e2 = Enigma(
                                 ])
         );
 
-print(e2.decrypt(encrypted_string));
+print(e2.decrypt(encrypted_string))
 ```
