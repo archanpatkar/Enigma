@@ -58,7 +58,7 @@ e1 = Enigma(
                                         ("V","S"),
                                         ("Y","Q")
                                 ])
-        );
+        )
 
 encrypted_string = e1.encrypt("Hello")
 print(encrypted_string)
@@ -86,7 +86,7 @@ e2 = Enigma(
                                         ("V","S"),
                                         ("Y","Q")
                                 ])
-        );
+        )
 
 print(e2.decrypt(encrypted_string))
 ```
